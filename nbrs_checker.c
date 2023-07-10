@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers_checker.c                                  :+:      :+:    :+:   */
+/*   nbrs_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:27:42 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/05 21:54:20 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/09 11:57:56 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/09 15:50:31 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	number_position(t_stack *a, int nb)
+int	nbr_position(t_stack *a, int nb)
 {
 	int	i;
 
@@ -25,34 +25,28 @@ int	number_position(t_stack *a, int nb)
 	return (i);
 }
 
-void	valid_number(char **str)
+void	valid_nbr(char **str)
 {
 	int	i;
 	int	j;
-	int	check;
 
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
 		if (str[i][j] == '-' || str[i][j] == '+')
-		{
-			check = ft_isdigit(str[i][++j]);
-			if (!check)
-				error_msg();
-		}
+			j++;
 		while (str[i][j])
 		{
-			check = ft_isdigit(str[i][j]);
-			if (!check)
-				error_msg();
+			if (!ft_isdigit(str[i][j]))
+				invalid_nbr_error();
 			j++;
 		}
 		i++;
 	}
 }
 
-void	duplicated_number(t_stack *a)
+void	duplicated_nbr(t_stack *a)
 {
 	int	*str;
 	int	size;
@@ -60,7 +54,7 @@ void	duplicated_number(t_stack *a)
 	int	j;
 
 	i = 0;
-	str = create_array_from_stack_a(a);
+	str = stack_to_array(a);
 	size = ft_lstsize(a);
 	while (i < size)
 	{
@@ -68,10 +62,7 @@ void	duplicated_number(t_stack *a)
 		while (j < size)
 		{
 			if (str[i] == str[j])
-			{
-				ft_putstr_fd("ERROR: Duplicate Numbers Found\n", 2);
-				exit (1);
-			}
+				duplicated_nbr_error();
 			j++;
 		}
 		i++;
@@ -79,29 +70,29 @@ void	duplicated_number(t_stack *a)
 	free (str);
 }
 
-int	find_max_nb(t_stack *stack)
+int	big_nbr_index(t_stack *stack)
 {
-	int	max_nb;
-	int	max_index;
+	int	big_nbr;
+	int	index;
 	int	i;
 
 	i = 0;
-	max_index = 0;
-	max_nb = stack->nbr;
+	index = 0;
+	big_nbr = stack->nbr;
 	while (stack)
 	{
-		if (max_nb < stack->nbr)
+		if (big_nbr < stack->nbr)
 		{
-			max_nb = stack->nbr;
-			max_index = i;
+			big_nbr = stack->nbr;
+			index = i;
 		}
 		stack = stack->next;
 		i++;
 	}
-	return (max_index);
+	return (index);
 }
 
-int	find_min_nb(t_stack *stack)
+int	small_nbr(t_stack *stack)
 {
 	int	i;
 

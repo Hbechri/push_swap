@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_big_numbers.c                              :+:      :+:    :+:   */
+/*   int_table.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/06 14:46:10 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:49:44 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/09 12:00:55 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/09 12:02:54 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	*sort_int_tab(int *tab, int size)
 {
@@ -54,60 +54,4 @@ int	*fill_tab(t_stack *a)
 		i++;
 	}
 	return (sort_int_tab(tab, size));
-}
-
-
-void	big_nbr_to_top(t_stack **stack)
-{
-	int	index;
-	int	size;
-
-	while (1)
-	{
-		index = big_nbr_index(*stack);
-		size = ft_lstsize(*stack);
-		if (index == 0)
-			break ;
-		if (index > size / 2)
-			rrb(stack);
-		else if (index <= size / 2)
-			rb(stack);
-	}
-}
-
-void	push_table_to_b(t_stack **a, t_stack **b, int *tab, int chank)
-{
-	int	i;
-
-	i = 0;
-	while (*a)
-	{
-		if ((*a)->nbr <= tab[i])
-		{
-			pb(a, b);
-			rb(b);
-			i++;
-		}
-		else if ((*a)->nbr > tab[i] && (*a)->nbr <= tab[chank + i])
-		{
-			pb(a, b);
-			i++;
-		}
-		else
-			ra(a);
-	}
-}
-
-void	more_than_five_nbrs(t_stack **a, t_stack **b, int chank)
-{
-	int	*tab;
-
-	tab = fill_tab(*a);
-	push_table_to_b(a, b, tab, chank);
-	while (*b)
-	{
-		big_nbr_to_top(b);
-		pa(a, b);
-	}
-	free (tab);
 }

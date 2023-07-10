@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msgs.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/05 23:11:24 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/08 17:06:16 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-void	invalid_nbr_error(void)
+void	swap(t_stack *ptr)
 {
-	ft_putstr_fd("Error: Invalid number\n", 2);
-	exit (1);
+	int	tmp;
+
+	if (ptr == NULL || ptr->next == NULL)
+		return ;
+	tmp = ptr->nbr;
+	ptr->nbr = ptr->next->nbr;
+	ptr->next->nbr = tmp;
 }
 
-void	duplicated_nbr_error(void)
+void	sa(t_stack **a)
 {
-	ft_putstr_fd("Error: Duplicated number\n", 2);
-	exit (1);
+	swap(*a);
 }
 
-void	no_nbrs_error(void)
+void	sb(t_stack **b)
 {
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
+	swap(*b);
 }
 
-void	max_int_error(void)
+void	ss(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
-	exit (1);
+	swap(*a);
+	swap(*b);
 }

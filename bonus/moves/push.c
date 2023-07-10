@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msgs.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/05 23:13:42 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/08 17:06:03 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-void	invalid_nbr_error(void)
+void	push(t_stack **src, t_stack **dst)
 {
-	ft_putstr_fd("Error: Invalid number\n", 2);
-	exit (1);
+	t_stack	*ptr;
+
+	if (*src == NULL)
+		return ;
+	ptr = (*src)->next;
+	(*src)->next = *dst;
+	*dst = *src;
+	*src = ptr;
 }
 
-void	duplicated_nbr_error(void)
+void	pa(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd("Error: Duplicated number\n", 2);
-	exit (1);
+	push(b, a);
 }
 
-void	no_nbrs_error(void)
+void	pb(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
-}
-
-void	max_int_error(void)
-{
-	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
-	exit (1);
+	push(a, b);
 }

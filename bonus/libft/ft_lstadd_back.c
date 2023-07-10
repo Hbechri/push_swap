@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msgs.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/05 15:43:01 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/08 18:13:18 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-void	invalid_nbr_error(void)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	ft_putstr_fd("Error: Invalid number\n", 2);
-	exit (1);
-}
+	t_stack	*ptr;
 
-void	duplicated_nbr_error(void)
-{
-	ft_putstr_fd("Error: Duplicated number\n", 2);
-	exit (1);
-}
-
-void	no_nbrs_error(void)
-{
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
-}
-
-void	max_int_error(void)
-{
-	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
-	exit (1);
+	if (!lst)
+		return ;
+	else if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		ptr = *lst;
+		while (ptr -> next != NULL)
+			ptr = ptr -> next;
+		ptr -> next = new;
+	}
 }

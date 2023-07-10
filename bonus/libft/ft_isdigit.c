@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msgs.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/05 13:13:51 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/08 18:12:27 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-void	invalid_nbr_error(void)
+int	ft_isdigit(int c)
 {
-	ft_putstr_fd("Error: Invalid number\n", 2);
-	exit (1);
-}
-
-void	duplicated_nbr_error(void)
-{
-	ft_putstr_fd("Error: Duplicated number\n", 2);
-	exit (1);
-}
-
-void	no_nbrs_error(void)
-{
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
-}
-
-void	max_int_error(void)
-{
-	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
-	exit (1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:59:11 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/07 16:14:46 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/08 18:12:04 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 long	ft_atoi(const char *str)
 {

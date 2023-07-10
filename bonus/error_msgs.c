@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/09 12:49:22 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/09 15:43:33 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	invalid_nbr_error(void)
 {
@@ -24,14 +24,14 @@ void	duplicated_nbr_error(void)
 	exit (1);
 }
 
-void	no_nbrs_error(void)
-{
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
-}
-
 void	max_int_error(void)
 {
 	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
+	exit (1);
+}
+
+void	no_nbrs_error(void)
+{
+	ft_putstr_fd("Error: No Numbers Provided\n", 2);
 	exit (1);
 }

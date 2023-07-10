@@ -6,13 +6,13 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:14:42 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/06 18:27:05 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/07 16:07:35 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;

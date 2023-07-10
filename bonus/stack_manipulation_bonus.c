@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_manipulation.c                               :+:      :+:    :+:   */
+/*   stack_manipulation_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:45:10 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:21 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/09 12:04:04 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/09 15:20:52 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	*stack_to_array(t_stack *a)
 {
@@ -33,28 +33,17 @@ int	*stack_to_array(t_stack *a)
 void	fill_stack(t_stack **a, char **str)
 {
 	int			i;
-	long int	nbr;
+	long int	nb;
 
 	i = 0;
-	nbr = 0;
+	nb = 0;
 	while (str[i])
 	{
-		nbr = ft_atoi(str[i]);
-		if (nbr < INT_MIN || nbr > INT_MAX)
-			max_int_error();
-		ft_lstadd_back(a, ft_lstnew(nbr));
+		nb = ft_atoi(str[i]);
+		if (nb < INT_MIN || nb > INT_MAX)
+            max_int_error();
+		ft_lstadd_back(a, ft_lstnew(nb));
 		i++;
 	}
 	duplicated_nbr(*a);
-}
-
-int	sorted_stack(t_stack *stack)
-{
-	while (stack->next != NULL)
-	{
-		if (stack->nbr > stack->next->nbr)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
 }

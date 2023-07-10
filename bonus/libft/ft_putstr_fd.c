@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msgs.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 21:53:38 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:48:01 by hbechri          ###   ########.fr       */
+/*   Created: 2023/07/05 13:18:13 by hbechri           #+#    #+#             */
+/*   Updated: 2023/07/08 18:14:07 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-void	invalid_nbr_error(void)
+void	ft_putstr_fd(char *str, int fd)
 {
-	ft_putstr_fd("Error: Invalid number\n", 2);
-	exit (1);
-}
+	int	i;
 
-void	duplicated_nbr_error(void)
-{
-	ft_putstr_fd("Error: Duplicated number\n", 2);
-	exit (1);
-}
-
-void	no_nbrs_error(void)
-{
-	ft_putstr_fd("Error: No Numbers Provided\n", 2);
-	exit (1);
-}
-
-void	max_int_error(void)
-{
-	ft_putstr_fd("Error: Number is to bigger than int max/min\n", 2);
-	exit (1);
+	i = 0;
+	if (!str)
+		return ;
+	if (fd < 0)
+		return ;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
 }

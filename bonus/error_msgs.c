@@ -6,11 +6,17 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 12:49:22 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:43:33 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:13:57 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	moves_error(void)
+{
+	ft_putstr_fd("Error: Invalid move\n", 2);
+	exit (1);
+}
 
 void	invalid_nbr_error(void)
 {

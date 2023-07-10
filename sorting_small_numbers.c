@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:23:14 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/08 12:19:27 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:42:24 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ void	two_nbrs(t_stack **a)
 
 void	three_nbrs(t_stack **a)
 {
-	if (((*a)->nbr > (*a)->next->nbr)
-		&& ((*a)->nbr < (*a)->next->next->nbr))
+	int	nbr;
+
+	nbr = (*a)->nbr;
+	if ((nbr > (*a)->next->nbr) && (nbr < (*a)->next->next->nbr))
 		sa(a);
-	else if (((*a)->nbr < (*a)->next->nbr)
-		&& ((*a)->nbr > (*a)->next->next->nbr))
+	else if ((nbr < (*a)->next->nbr) && (nbr > (*a)->next->next->nbr))
 		rra(a);
-	else if (((*a)->nbr < (*a)->next->nbr) && ((*a)->nbr < (*a)->next->next->nbr))
+	else if ((nbr < (*a)->next->nbr) && (nbr < (*a)->next->next->nbr))
 	{
 		if ((*a)->next->nbr > (*a)->next->next->nbr)
 		{
@@ -34,8 +35,7 @@ void	three_nbrs(t_stack **a)
 			sa(a);
 		}
 	}
-	else if (((*a)->nbr > (*a)->next->nbr)
-		&& ((*a)->nbr > (*a)->next->next->nbr))
+	else if ((nbr > (*a)->next->nbr) && (nbr > (*a)->next->next->nbr))
 	{
 		if ((*a)->next->nbr < (*a)->next->next->nbr)
 			ra(a);

@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 21:08:36 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:46:25 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:07:13 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	sort_stack(t_stack **a, t_stack **b)
 	else if (size <= 500 && !sorted_stack(*a))
 		more_than_five_nbrs(a, b, 34);
 }
-
 
 char	*join_nbrs(char **str)
 {

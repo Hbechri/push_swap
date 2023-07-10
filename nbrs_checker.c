@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:57:56 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:50:31 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:06:59 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ void	valid_nbr(char **str)
 	{
 		j = 0;
 		if (str[i][j] == '-' || str[i][j] == '+')
+		{
+			if (!ft_isdigit(str[i][++j]))
+				invalid_nbr_error();
 			j++;
+		}
 		while (str[i][j])
 		{
 			if (!ft_isdigit(str[i][j]))

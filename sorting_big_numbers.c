@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:46:10 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:49:44 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:08:30 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	*fill_tab(t_stack *a)
 	}
 	return (sort_int_tab(tab, size));
 }
-
 
 void	big_nbr_to_top(t_stack **stack)
 {

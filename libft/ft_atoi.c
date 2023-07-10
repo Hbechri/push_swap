@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:59:11 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/07 16:14:46 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:20:16 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atoi(const char *str)
 {
-	unsigned long long	result;
-	int					sign;
+	long	result;
+	int		sign;
 
 	result = 0;
 	sign = 1;
@@ -29,7 +29,6 @@ long	ft_atoi(const char *str)
 	{
 		result = result * 10 + *str - '0';
 		str++;
-		
 	}
 	if (result >= 9223372036854775807 && sign > 0)
 		return (-1);

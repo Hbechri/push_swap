@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:57:44 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:43:49 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:14:32 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	duplicated_nbr(t_stack *a)
 		while (j < size)
 		{
 			if (str[i] == str[j])
-                duplicated_nbr_error();
+				duplicated_nbr_error();
 			j++;
 		}
 		i++;

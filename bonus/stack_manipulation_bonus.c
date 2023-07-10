@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 12:04:04 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:20:52 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:18:24 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	fill_stack(t_stack **a, char **str)
 	{
 		nb = ft_atoi(str[i]);
 		if (nb < INT_MIN || nb > INT_MAX)
-            max_int_error();
+			max_int_error();
 		ft_lstadd_back(a, ft_lstnew(nb));
 		i++;
 	}

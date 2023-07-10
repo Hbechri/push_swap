@@ -6,12 +6,12 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:16:01 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/09 15:46:56 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:12:09 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
- 
+
 int	sorted_stack(t_stack *stack)
 {
 	if (stack == NULL)
@@ -50,7 +50,7 @@ void	moves_checker(t_stack **a, t_stack **b, char *str)
 	else if (!ft_strcmp(str, "rrr\n"))
 		rrr(a, b);
 	else
-		error_msg();
+		moves_error();
 }
 
 char	*join_nbrs(char **str)

@@ -6,7 +6,7 @@
 /*   By: hbechri <hbechri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:46:10 by hbechri           #+#    #+#             */
-/*   Updated: 2023/07/10 15:08:30 by hbechri          ###   ########.fr       */
+/*   Updated: 2023/07/11 18:16:02 by hbechri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	big_nbr_to_top(t_stack **stack)
 	}
 }
 
-void	push_table_to_b(t_stack **a, t_stack **b, int *tab, int chank)
+void	push_table_to_b(t_stack **a, t_stack **b, int *tab, int chunk)
 {
 	int	i;
 
@@ -87,7 +87,7 @@ void	push_table_to_b(t_stack **a, t_stack **b, int *tab, int chank)
 			rb(b);
 			i++;
 		}
-		else if ((*a)->nbr > tab[i] && (*a)->nbr <= tab[chank + i])
+		else if ((*a)->nbr > tab[i] && (*a)->nbr <= tab[chunk + i])
 		{
 			pb(a, b);
 			i++;
@@ -97,12 +97,12 @@ void	push_table_to_b(t_stack **a, t_stack **b, int *tab, int chank)
 	}
 }
 
-void	more_than_five_nbrs(t_stack **a, t_stack **b, int chank)
+void	more_than_five_nbrs(t_stack **a, t_stack **b, int chunk)
 {
 	int	*tab;
 
 	tab = fill_tab(*a);
-	push_table_to_b(a, b, tab, chank);
+	push_table_to_b(a, b, tab, chunk);
 	while (*b)
 	{
 		big_nbr_to_top(b);
